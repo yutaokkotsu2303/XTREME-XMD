@@ -13,14 +13,14 @@ cmd({
 },
 async (conn, mek, m, { from, sender, pushname, reply }) => {
     try {
-        const dec = `╭━━⧼ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗 ⧽━━╮
+        const dec = `╭━⧼ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗 ⧽━╮
 ┃ ✨ *ᴏᴡɴᴇʀ:* ${config.OWNER_NAME}
 ┃ ⚙️ *ᴍᴏᴅᴇ:* ${config.MODE}
 ┃ 📡 *ᴘʟᴀᴛғᴏʀᴍ:* GitHub
 ┃ 🧠 *ᴛʏᴘᴇ:* NodeJs (Multi Device)
 ┃ ⌨️ *ᴘʀᴇғɪx:* ${config.PREFIX}
 ┃ 🧾 *ᴠᴇʀsɪᴏɴ:* 1.0.0 ʙᴇᴛᴀ
-╰━━━━━━━━━━━━━━━━━╯
+╰━━━━━━━━━━━━━━━━╯
 
 ╭━⧼ᴄᴏᴍᴍᴀɴᴅ ᴄᴀᴛᴇɢᴏʀɪᴇs⧽━╮
 ┃⦉ ǫᴜʀᴀɴᴍᴇɴᴜ
@@ -46,7 +46,7 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/jfbed2.jpg` },
+                image: { url: `https://files.catbox.moe/eq7yzy.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
