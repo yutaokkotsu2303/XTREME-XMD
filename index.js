@@ -111,7 +111,7 @@ const port = process.env.PORT || 9090;
   }
   });
   console.log('Plugins installed successful ✅')
-  console.log('RAHEEM-XMD-3 CONNECTED SUCCESSFULLY ✅')
+  console.log('XTREME-XMD CONNECTED SUCCESSFULLY ✅')
   
   let up = `╭──⧼⧼ 🤖 *xᴛʀᴇᴍᴇ xᴍᴅ ᴠ1* ⧽⧽
 ├─▸ *ᴜʟᴛʀᴀ sᴜᴘᴇʀ ғᴀsᴛ ᴘᴏᴡᴇʀғᴜʟʟ ⚠️*  
