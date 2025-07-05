@@ -16,7 +16,7 @@ cmd({
   
     // Check if a Telegram sticker link is provided
     if (!args[0]) {
-      reply('Please provide a Telegram sticker pack link.\n\n Example `.tgs` https://t.me/addstickers/telegram ');
+      reply('*Please provide a Telegram sticker pack link.*\n\n Example `.tgs` https://t.me/addstickers/telegram ');
       return;
     }
 
@@ -65,7 +65,7 @@ await conn.sendMessage(
 
       // Create a WhatsApp sticker
       const sticker = new Sticker(buffer.data, {
-        pack: 'x-ʙᴏᴛ-ᴍᴅ',
+        pack: 'ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ',
         author: `${pushname}`,
         type: StickerTypes.FULL,
         categories: ['🤩', '🎉'],
