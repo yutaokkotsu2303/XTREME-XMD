@@ -32,7 +32,7 @@ cmd({
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
           newsletterJid: "120363398101781980@newsletter",
-          newsletterName: "RAHEEM-XMD-3",
+          newsletterName: "𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗",
           serverMessageId: 143
         }
       }
@@ -41,7 +41,7 @@ cmd({
 
   try {
     // Appel API Zenz pour obtenir la capture d'écran
-    const apiUrl = "https://zenz.biz.id/tools/ssweb?url=" + encodeURIComponent(q);
+    const apiUrl = "https://api.davidcyriltech.my.id/ssweb?url=" + encodeURIComponent(q);
     const response = await fetch(apiUrl);
 
     const contentType = response.headers.get("content-type");
