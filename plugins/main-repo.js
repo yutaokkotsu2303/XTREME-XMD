@@ -6,7 +6,7 @@ cmd({
     pattern: "repo",
     alias: ["sc", "script", "info"],
     desc: "Fetch GitHub repository information",
-    react: "🌿",
+    react: "📥",
     category: "info",
     filename: __filename,
 },
@@ -35,8 +35,8 @@ async (conn, mek, m, { from, reply }) => {
 
         const repoData = await response.json();
 
-        const message = `> ╭⭑━━━━━➤ *XTREME-XMD REPO*
-> ┇╭───────────────┈⊷
+        const message = `> ╭⭑━━➤ *XTREME-XMD REPO*
+> ┇╭────────────┈⊷
 > ┇┃♢ *ʀᴇᴘᴏsɪᴛᴏʀʏ*: ${repoData.name}
 > ┇┃♢ *ᴏᴡɴᴇʀ*: ${repoData.owner.login}
 > ┇┃♢ *sᴛᴀʀs*: ${repoData.stargazers_count}
@@ -44,8 +44,8 @@ async (conn, mek, m, { from, reply }) => {
 > ┇┃♢ *ᴜʀʟ*: ${repoData.html_url}
 > ┇┃♢ *ᴅᴇsᴄʀɪᴘᴛɪᴏɴ*:
 > ┇┃${repoData.description || 'ɴᴏ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ'}
-> ┇╰───────────────┈⊷
-> ╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╍╯
+> ┇╰───────────┈⊷
+> ╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╍╯
 > ${config.DESCRIPTION}`;
 
         await conn.sendMessage(from, {
