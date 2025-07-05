@@ -13,33 +13,33 @@ cmd({
 },
 async (conn, mek, m, { from, sender, pushname, reply }) => {
     try {
-        const dec = `╭━⧼ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗 ⧽━╮
+        const dec = `╭⭑━━➤ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗 
 ┃ ✨ *ᴏᴡɴᴇʀ:* ${config.OWNER_NAME}
 ┃ ⚙️ *ᴍᴏᴅᴇ:* ${config.MODE}
 ┃ 📡 *ᴘʟᴀᴛғᴏʀᴍ:* GitHub
 ┃ 🧠 *ᴛʏᴘᴇ:* NodeJs (Multi Device)
 ┃ ⌨️ *ᴘʀᴇғɪx:* ${config.PREFIX}
 ┃ 🧾 *ᴠᴇʀsɪᴏɴ:* 1.0.0 ʙᴇᴛᴀ
-╰━━━━━━━━━━━━━━━━╯
+╰⭑━━━━━━━━━━━━⭑━➤
 
-╭━⧼ᴄᴏᴍᴍᴀɴᴅ ᴄᴀᴛᴇɢᴏʀɪᴇs⧽━╮
-┃⦉ ǫᴜʀᴀɴᴍᴇɴᴜ
-┃⦉ ᴘʀᴀʏᴇʀᴛɪᴍᴇ
-┃⦉ ᴀɪᴍᴇɴᴜ
-┃⦉ ᴀɴᴍɪᴇᴍᴇɴᴜ
-┃⦉ ʀᴇᴀᴄᴛɪᴏɴs
-┃⦉ ᴄᴏɴᴠᴇʀᴛᴍᴇɴᴜ
-┃⦉ ғᴜɴᴍᴇɴᴜ
-┃⦉ ᴅʟᴍᴇɴᴜ
-┃⦉ ʟɪsᴛᴄᴍᴅ
-┃⦉ ᴍᴀɪɴᴍᴇɴᴜ
-┃⦉ ɢʀᴏᴜᴘᴍᴇɴᴜ
-┃⦉ ᴀʟʟᴍᴇɴᴜ
-┃⦉ ᴏᴡɴᴇʀᴍᴇɴᴜ
-┃⦉ ᴏᴛʜᴇʀᴍᴇɴᴜ
-┃⦉ ʟᴏɢᴏ
-┃⦉ ʀᴇᴘᴏ
-╰━━━━━━━━━━━━━━━━━━╯
+> *╭⭑━➤* *ᴄᴏᴍᴍᴀɴᴅ ᴄᴀᴛᴇɢᴏʀɪᴇs*
+> *┃* ǫᴜʀᴀɴᴍᴇɴᴜ
+> *┃* ᴘʀᴀʏᴇʀᴛɪᴍᴇ
+> *┃* ᴀɪᴍᴇɴᴜ
+> *┃* ᴀɴᴍɪᴇᴍᴇɴᴜ
+> *┃* ʀᴇᴀᴄᴛɪᴏɴs
+> *┃* ᴄᴏɴᴠᴇʀᴛᴍᴇɴᴜ
+> *┃* ғᴜɴᴍᴇɴᴜ
+> *┃* ᴅʟᴍᴇɴᴜ
+> *┃* ʟɪsᴛᴄᴍᴅ
+> *┃* ᴍᴀɪɴᴍᴇɴᴜ
+> *┃* ɢʀᴏᴜᴘᴍᴇɴᴜ
+> *┃* ᴀʟʟᴍᴇɴᴜ
+> *┃* ᴏᴡɴᴇʀᴍᴇɴᴜ
+> *┃* ᴏᴛʜᴇʀᴍᴇɴᴜ
+> *┃* ʟᴏɢᴏ
+> *┃* ʀᴇᴘᴏ
+> *╰━━━━━━━━━━━━━⭑━━➤*
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*
 `;
 
@@ -73,7 +73,7 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363398101781980@newsletter',
-                    newsletterName:'RAHEEM-CM',
+                    newsletterName:'𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                     serverMessageId: 143
                 }
             }
@@ -129,12 +129,13 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• typography
 ┃◈┃• birthday
 ┃◈└───────────┈⊷
-╰──────────────┈⊷`;
+╰──────────────┈⊷
+> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/a97zm1.jpg` },
+                image: { url: `https://files.catbox.moe/gzb9mj.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -142,7 +143,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363398101781980@newsletter',
-                        newsletterName: "RAHEEM-XMD-3🪀",
+                        newsletterName: "𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗",
                         serverMessageId: 143
                     }
                 }
@@ -167,40 +168,40 @@ async (conn, mek, m, { from, quoted, reply }) => {
     try {
         let dec = `╭━━〔 *Reactions Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈┃• bully @tag
-┃◈┃• cuddle @tag
-┃◈┃• cry @tag
-┃◈┃• hug @tag
-┃◈┃• awoo @tag
-┃◈┃• kiss @tag
-┃◈┃• lick @tag
-┃◈┃• pat @tag
-┃◈┃• smug @tag
-┃◈┃• bonk @tag
-┃◈┃• yeet @tag
-┃◈┃• blush @tag
-┃◈┃• smile @tag
-┃◈┃• wave @tag
-┃◈┃• highfive @tag
-┃◈┃• handhold @tag
-┃◈┃• nom @tag
-┃◈┃• bite @tag
-┃◈┃• glomp @tag
-┃◈┃• slap @tag
-┃◈┃• kill @tag
-┃◈┃• happy @tag
-┃◈┃• wink @tag
-┃◈┃• poke @tag
-┃◈┃• dance @tag
-┃◈┃• cringe @tag
+┃◈┃😈 • bully @tag
+┃◈┃🤗 • cuddle @tag
+┃◈┃😭 • cry @tag
+┃◈┃🤗 • hug @tag
+┃◈┃🐺 • awoo @tag
+┃◈┃💋 • kiss @tag
+┃◈┃👅 • lick @tag
+┃◈┃👏 • pat @tag
+┃◈┃😏 • smug @tag
+┃◈┃🔨 • bonk @tag
+┃◈┃🗑️ • yeet @tag
+┃◈┃😊 • blush @tag
+┃◈┃😁 • smile @tag
+┃◈┃👋 • wave @tag
+┃◈┃✋ • highfive @tag
+┃◈┃🤝 • handhold @tag
+┃◈┃🍽️ • nom @tag
+┃◈┃🦷 • bite @tag
+┃◈┃🫂 • glomp @tag
+┃◈┃👋🏻 • slap @tag
+┃◈┃🔪 • kill @tag
+┃◈┃😄 • happy @tag
+┃◈┃😉 • wink @tag
+┃◈┃👉 • poke @tag
+┃◈┃💃 • dance @tag
+┃◈┃😬 • cringe @tag
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM CM*`;
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/a97zm1.jpg` },
+                image: { url: `https://files.catbox.moe/o5rh7n.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -208,7 +209,7 @@ async (conn, mek, m, { from, quoted, reply }) => {
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363398101781980@newsletter',
-                        newsletterName: 'RAHEEM-XMD-3🪀',
+                        newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 144
                     }
                 }
@@ -235,55 +236,39 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
     try {
         let dec = `╭━━〔 *Download Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈┃• facebook
-┃◈┃• mediafire
-┃◈┃• tiktok
-┃◈┃• twitter
-┃◈┃• Insta
-┃◈┃• apk
-┃◈┃• img
-┃◈┃• tt2
-┃◈┃• pins
-┃◈┃• apk2
-┃◈┃• fb2
-┃◈┃• pinterest 
-┃◈┃• spotify
-┃◈┃• play
-┃◈┃• play2
-┃◈┃• play3
-┃◈┃• play4
-┃◈┃• play5
-┃◈┃• play6
-┃◈┃• play7
-┃◈┃• play8
-┃◈┃• play9
-┃◈┃• play10
-┃◈┃• audio
-┃◈┃• video
-┃◈┃• video2
-┃◈┃• video3
-┃◈┃• video4
-┃◈┃• video5
-┃◈┃• video6
-┃◈┃• video7
-┃◈┃• video8
-┃◈┃• video9
-┃◈┃• video10
-┃◈┃• ytmp3
-┃◈┃• ytmp4
-┃◈┃• song
-┃◈┃• darama
-┃◈┃• gdrive
-┃◈┃• ssweb
-┃◈┃• tiks
+┃◈┃• 💎 facebook
+┃◈┃• 🌀 facebook2
+┃◈┃• 💡 likee
+┃◈┃• 🔍 tiktoksearch
+┃◈┃• 📲 tiktok
+┃◈┃• 🐦 twitter
+┃◈┃• 📸 Instagram
+┃◈┃• 👻 snapchat
+┃◈┃• 🎬 capcut
+┃◈┃• 🎵 ringtone
+┃◈┃• 📥 apk
+┃◈┃• 🖼️ img
+┃◈┃• 📌 pinterestdl
+┃◈┃• 🔎 spotifysearch
+┃◈┃• 📡 spotifydl
+┃◈┃• 🎧 play
+┃◈┃• 🎶 play3
+┃◈┃• 📹 video
+┃◈┃• 🎼 mp3
+┃◈┃• 🎥 mp4
+┃◈┃• 🔎 yts
+┃◈┃• 📂 mediafire
+┃◈┃• 📂 gdrive 
+┃◈┃• 🔍 ssweb
+┃◈┃• 🐶 dog  
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM CM*`;
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/a97zm1.jpg` },
+                image: { url: `https://files.catbox.moe/56z4sm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -291,7 +276,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363398101781980@newsletter',
-                        newsletterName: 'RAHEEM-XMD-3🪀',
+                        newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
                 }
@@ -319,49 +304,46 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
        {
         let dec = `╭━━〔 *Group Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈┃• grouplink
-┃◈┃• kickall
-┃◈┃• kickall2
-┃◈┃• kickall3
-┃◈┃• add
-┃◈┃• remove
-┃◈┃• kick
-┃◈┃• promote 
-┃◈┃• demote
-┃◈┃• dismiss 
-┃◈┃• revoke
-┃◈┃• setgoodbye
-┃◈┃• setwelcome
-┃◈┃• delete 
-┃◈┃• getpic
-┃◈┃• ginfo
-┃◈┃• delete 
-┃◈┃• disappear on
-┃◈┃• disappear off
-┃◈┃• disappear 7D,24H
-┃◈┃• allreq
-┃◈┃• updategname
-┃◈┃• updategdesc
-┃◈┃• joinrequests
-┃◈┃• senddm
-┃◈┃• nikal
-┃◈┃• mute
-┃◈┃• unmute
-┃◈┃• lockgc
-┃◈┃• unlockgc
-┃◈┃• invite
-┃◈┃• tag
-┃◈┃• hidetag
-┃◈┃• tagall
-┃◈┃• tagadmins
+┃◈┃🔗 • grouplink
+┃◈┃🔗 • jid
+┃◈┃💣 • kickall
+┃◈┃💣 • removecountry +662
+┃◈┃👑 • kickadmins
+┃◈┃➕ • add
+┃◈┃➖ • remove
+┃◈┃🦵 • kick
+┃◈┃🔼 • promote 
+┃◈┃🔽 • demote
+┃◈┃♻️ • revoke
+┃◈┃👋 • left
+┃◈┃📄 • ginfo
+┃◈┃🗑️ • delete 
+┃◈┃✏️ • upgname
+┃◈┃📝 • upgdesc
+┃◈┃🔊 • groupunmute
+┃◈┃🔇 • mute
+┃◈┃🔈 • unmute
+┃◈┃🔒 • lockgc
+┃◈┃🔓 • unlockgc
+┃◈┃🧾 • invite
+┃◈┃🏷️ • tag
+┃◈┃📢 • tagall
+┃◈┃📢 • broadcast
+┃◈┃❤️ • ship
+┃◈┃🧾 • shapar
+┃◈┃🫣 • compatibility
+┃◈┃🤔 • roast
+┃◈┃🥰 • compliment
+┃◈┃😍 • lovetest
+┃◈┃🙂‍↔️ • nikal
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM-CM*`;
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/a97zm1.jpg` },
+                image: { url: `https://files.catbox.moe/z5mxr1.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -369,7 +351,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363398101781980@newsletter',
-                        newsletterName: 'RAHEEM-XMD-3🪀',
+                        newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
                 }
@@ -397,38 +379,25 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         let dec = `╭━━〔 *Fun Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈┃• shapar
-┃◈┃• rate
-┃◈┃• insult
-┃◈┃• hack
-┃◈┃• ship
-┃◈┃• character
-┃◈┃• pickup 
-┃◈┃• joke
-┃◈┃• hrt
-┃◈┃• hpy
-┃◈┃• syd
-┃◈┃• anger
-┃◈┃• shy
-┃◈┃• kiss
-┃◈┃• mon
-┃◈┃• cunfuzed
-┃◈┃• setpp
-┃◈┃• hand
-┃◈┃• nikal
-┃◈┃• hold
-┃◈┃• hug
-┃◈┃• nikal
-┃◈┃• hifi
-┃◈┃• poke
+┃◈┃💻 • hack
+┃◈┃🤣 • joke
+┃◈┃❤️ • heart
+┃◈┃😄 • hpy
+┃◈┃😠 • angry
+┃◈┃😢 • sad2
+┃◈┃😳 • shy2
+┃◈┃🌙 • moon
+┃◈┃😕 • confused
+┃◈┃🔥 • hot
+┃◈┃🏃 • virus
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM CM*`;
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/a97zm1.jpg` },
+                image: { url: `https://files.catbox.moe/pjvc54.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -436,7 +405,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363398101781980@newsletter',
-                        newsletterName: 'RAHEEM-XMD-3🪀',
+                        newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
                 }
@@ -463,43 +432,34 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
     try {
         let dec = `╭━━〔 *Other Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈┃• timenow
-┃◈┃• date
-┃◈┃• count
-┃◈┃• calculate
-┃◈┃• countx
-┃◈┃• flip
-┃◈┃• coinflip
-┃◈┃• rcolor
-┃◈┃• roll
-┃◈┃• fact
-┃◈┃• cpp
-┃◈┃• rw
-┃◈┃• pair
-┃◈┃• pair2
-┃◈┃• pair3
-┃◈┃• fancy
-┃◈┃• logo <text>
-┃◈┃• define
-┃◈┃• news
-┃◈┃• movie
-┃◈┃• weather
-┃◈┃• srepo
-┃◈┃• insult
-┃◈┃• save
-┃◈┃• wikipedia
-┃◈┃• gpass
-┃◈┃• githubstalk
-┃◈┃• yts
-┃◈┃• ytv
+┃◈┃⏰ • time
+┃◈┃📅 • date
+┃◈┃🔢 • count
+┃◈┃🪙 • coinflip
+┃◈┃🎨 • rcolor
+┃◈┃🎲 • roll
+┃◈┃📚 • fact
+┃◈┃📖 • define
+┃◈┃📰 • news
+┃◈┃🎬 • movie
+┃◈┃☁️ • weather
+┃◈┃🌐 • wikipedia
+┃◈┃🔍 • githubstalk
+┃◈┃🎵 • tiktokstalk
+┃◈┃💻 • webinfo
+┃◈┃🔍 • yts
+┃◈┃🔐 • gpass
+┃◈┃🎞️ • movie
+┃◈┃🕌 • praytime
+┃◈┃🪀 • wtmod
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM CM*`;
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/a97zm1.jpg` },
+                image: { url: `https://files.catbox.moe/los43o.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -507,7 +467,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363398101781980@newsletter',
-                        newsletterName: 'RAHEEM-XMD-3🪀',
+                        newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
                 }
@@ -534,24 +494,30 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
     try {
         let dec = `╭━━〔 *Main Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈┃• ping
-┃◈┃• live 
-┃◈┃• alive
-┃◈┃• runtime
-┃◈┃• uptime 
-┃◈┃• repo
-┃◈┃• owner
-┃◈┃• menu
-┃◈┃• menu2
-┃◈┃• restart
+┃◈┃📶 • ping
+┃◈┃⚡ • speed
+┃◈┃🏓 • pong
+┃◈┃💡 • alive
+┃◈┃⏱️ • runtime
+┃◈┃⏳ • uptime 
+┃◈┃📥 • update
+┃◈┃🧩 • version
+┃◈┃📤 • send
+┃◈┃💾 • save
+┃◈┃🪄 • vv
+┃◈┃🪄 • vv6
+┃◈┃📲 • sendme
+┃◈┃♻️ • restart
+┃◈┃⚙️ • env
+┃◈┃🔧 • setting
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM-CM*`;
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/a97zm1.jpg` },
+                image: { url: `https://files.catbox.moe/rd2tgm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -559,7 +525,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363398101781980@newsletter',
-                        newsletterName: 'RAHEEM-XMD-3🪀',
+                        newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
                 }
@@ -579,38 +545,40 @@ cmd({
     pattern: "ownermenu",
     desc: "menu the bot",
     category: "menu",
-    react: "🦞",
+    react: "📑",
     filename: __filename
 }, 
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
         let dec = `╭━━〔 *Owner Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈┃• owner
-┃◈┃• menu
-┃◈┃• menu2
-┃◈┃• listcmd
-┃◈┃• allmenu
-┃◈┃• repo
-┃◈┃• block
-┃◈┃• unblock
-┃◈┃• fullpp
-┃◈┃• setpp
-┃◈┃• restart
-┃◈┃• shutdown
-┃◈┃• updatecmd
-┃◈┃• alive
-┃◈┃• ping 
-┃◈┃• gjid
-┃◈┃• jid
+┃◈┃👑 • owner
+┃◈┃📤 • forward
+┃◈┃📦 • repo
+┃◈┃📜 • script
+┃◈┃🗂️ • sc
+┃◈┃📁 • srepo
+┃◈┃📋 • menu
+┃◈┃🗃️ • allmenu
+┃◈┃📑 • list
+┃◈┃🚫 • block
+┃◈┃✅ • unblock
+┃◈┃♻️ • restart
+┃◈┃🛑 • shutdown
+┃◈┃🤝 • pair
+┃◈┃🔗 • getpair
+┃◈┃🤖 • clonebot
+┃◈┃📶 • siminfo
+┃◈┃📶 • siminfo2
+┃◈┃📝 • report
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM CM*`;
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/7y24v8.jpg` },
+                image: { url: `https://files.catbox.moe/isgbje.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -618,7 +586,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363398101781980@newsletter',
-                        newsletterName: '𝐇𝐀𝐈𝐊𝐎-𝐌𝐃𝐗-𝐕𝟐🪀',
+                        newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
                 }
@@ -645,33 +613,35 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
     try {
         let dec = `╭━━〔 *Convert Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈┃• sticker
-┃◈┃• sticker2
-┃◈┃• emojimix
-┃◈┃• fancy
-┃◈┃• take
-┃◈┃• tomp3
-┃◈┃• tts
-┃◈┃• trt
-┃◈┃• base64
-┃◈┃• unbase64
-┃◈┃• binary
-┃◈┃• dbinary
-┃◈┃• tinyurl
-┃◈┃• urldecode
-┃◈┃• urlencode
-┃◈┃• url
-┃◈┃• repeat 
-┃◈┃• ask
-┃◈┃• readmore
+┃◈┃🖼️ • sticker
+┃◈┃🌐 • fetch
+┃◈┃🎞️ • gif
+┃◈┃😆 • emix 🤩,😀
+┃◈┃🆒 • fancy
+┃◈┃✨ • remini
+┃◈┃🪄 • enhance
+┃◈┃🧼 • removebg
+┃◈┃🖼️ • hd
+┃◈┃🔊 • tts
+┃◈┃🌍 • trt
+┃◈┃🔈 • tts2
+┃◈┃🎙️ • tts3
+┃◈┃🔥 • attp
+┃◈┃🔗 • url
+┃◈┃😊 • emoji
+┃◈┃🎨 • fancy
+┃◈┃📷 • fullpp
+┃◈┃📁 • gitclone
+┃◈┃📄 • topdf
+┃◈┃🖼️ • randomwall
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM CM*`;
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/rvopa2.jpg` },
+                image: { url: `https://files.catbox.moe/pon7zg.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -679,7 +649,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363398101781980@newsletter',
-                        newsletterName: '𝐇𝐀𝐈𝐊𝐎-𝐌𝐃𝐗-𝐕𝟐🪀',
+                        newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
                 }
@@ -705,42 +675,38 @@ cmd({
 }, 
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
-          let dec = `╭━━〔 *Anime Menu* 〕━━┈⊷
-┃◈╭─────────────·๏
-┃◈┃• fack
-┃◈┃• dog
-┃◈┃• awoo
-┃◈┃• garl
-┃◈┃• waifu
-┃◈┃• neko
-┃◈┃• megnumin
-┃◈┃• neko
-┃◈┃• maid
-┃◈┃• loli
-┃◈┃• animegirl
-┃◈┃• animegirl
-┃◈┃• animegirl1
-┃◈┃• animegirl2
-┃◈┃• animegirl3
-┃◈┃• animegirl4
-┃◈┃• animegirl5
-┃◈┃• anime1
-┃◈┃• anime1
-┃◈┃• anime2
-┃◈┃• anime3
-┃◈┃• anime4
-┃◈┃• anime5
-┃◈┃• animenews
-┃◈┃• foxgirl
-┃◈┃• naruto
-┃◈└───────────┈⊷
-╰──────────────┈⊷
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM CM*`;
+          let dec = `╭━━〔 *Anime Menu* 〕━━┈⊷  
+┃◈╭─────────────·๏  
+┃◈┃😈 • fack  
+┃◈┃🐺 • awoo  
+┃◈┃👧 • garl  
+┃◈┃💖 • waifu  
+┃◈┃🐱 • neko  
+┃◈┃✨ • megnumin  
+┃◈┃😽 • neko  
+┃◈┃🧹 • maid  
+┃◈┃👶 • loli  
+┃◈┃👩‍🎤 • animegirl  
+┃◈┃👧 • animegirl1  
+┃◈┃👧 • animegirl2  
+┃◈┃👧 • animegirl3  
+┃◈┃👧 • animegirl4  
+┃◈┃👧 • animegirl5  
+┃◈┃🎌 • anime  
+┃◈┃🎌 • anime1  
+┃◈┃🎌 • anime1  
+┃◈┃🎌 • anime2  
+┃◈┃🎌 • anime3  
+┃◈┃🎌 • anime4  
+┃◈┃🎌 • anime5  
+┃◈└───────────┈⊷  
+╰──────────────┈⊷  
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/a97zm1.jpg` },
+                image: { url: `https://files.catbox.moe/jbpaz0.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -748,7 +714,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363398101781980@newsletter',
-                        newsletterName: 'RAHEEM-XMD-3🪀',
+                        newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
                 }
@@ -776,30 +742,24 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
     try {
         let dec = `╭━━〔 *Ai Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈┃• ai
-┃◈┃• gpt3
-┃◈┃• gpt2
-┃◈┃• gptmini
-┃◈┃• gpt
-┃◈┃• meta
-┃◈┃• blackbox
-┃◈┃• luma
-┃◈┃• dj 
-┃◈┃• khan
-┃◈┃• jawad
-┃◈┃• gpt4
-┃◈┃• bing
-┃◈┃• imagine 
-┃◈┃• imagine2
-┃◈┃• copilot
+┃◈┃🧠 • ai
+┃◈┃💬 • chatgpt
+┃◈┃💭 • chatgpt2
+┃◈┃🤖 • bot
+┃◈┃🖼️ • aiimage1 
+┃◈┃🖼️ • aiimage2
+┃◈┃🖼️ • aiimage3
+┃◈┃🌌 • flux
+┃◈┃🎨 • sdiffusion
+┃◈┃🧬 • stability
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM-CM*`;
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ Mʀ Sʜᴀʙᴀɴ*`;
 
         await conn.sendMessage(
             from,
             {
-                image: { url: `` },
+                image: { url: `https://files.catbox.moe/e606ty.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -807,7 +767,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363398101781980@newsletter',
-                        newsletterName: 'RAHEEM-XMD-3🪀',
+                        newsletterName: '𝗛𝗔𝗜𝗞𝗢-𝗫𝗠𝗗-𝗩𝟮',
                         serverMessageId: 143
                     }
                 }
