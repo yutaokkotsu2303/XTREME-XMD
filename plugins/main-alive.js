@@ -8,13 +8,12 @@ cmd({
     alias: ["bot", "online"],
     desc: "Check bot is alive or not",
     category: "main",
-    react: "🗞️",
+    react: "🌛",
     filename: __filename
 },
 async (conn, mek, m, { from, sender, reply }) => {
     try {
-        const status = `
-╭───⪨🤖𝐒𝐓𝐀𝐓𝐔𝐒⪩───◉
+        const status = `╭───⪨🤖𝐒𝐓𝐀𝐓𝐔𝐒⪩───◉
 │✨ *Bot is Active & Online!*
 │
 │🧠 *Owner:* ${config.OWNER_NAME}
