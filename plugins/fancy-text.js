@@ -1,79 +1,34 @@
-const axios = require("axios");
-const { cmd } = require("../command");
+const config = require('../config');
+const { fancy, fancytext, listall } = require('../models/Style');
+const { cmd } = require('../command');
+
 
 cmd({
   pattern: "fancy",
-  alias: ["font", "style"],
-  react: "✍️",
-  desc: "Convert text into various fancy fonts.",
-  category: "tools",
+  desc: "Makes stylish/fancy given text",
+  category: "converter",
+  use: "56 Asta",
   filename: __filename
-}, async (conn, mek, m, {
-  from,
-  quoted,
-  body,
-  isCmd,
-  command,
-  args,
-  q,
-  reply
-}) => {
+}, async (_0x230c03, _0x3b568a) => {
   try {
-    if (!q) return reply("❎ Please provide text to convert.\n\n*Example:* .fancy Hello");
-
-    const apiUrl = `https://billowing-waterfall-dbab.bot1newnew.workers.dev/?word=${encodeURIComponent(q)}`;
-    const res = await axios.get(apiUrl);
-
-    if (!res.data.status || !Array.isArray(res.data.result)) {
-      return reply("❌ Error fetching fonts. Try again later.");
-    }
-
-    const fonts = res.data.result;
-    const maxDisplay = 44;
-    const displayList = fonts.slice(0, maxDisplay);
-
-    let menuText = "╭──⪨ *FANCY STYLES* ⪩──⬣\n";
-    displayList.forEach((f, i) => {
-      menuText += `┃ ${i + 1}. ${f.result}\n`;
-    });
-    menuText += "╰──────────────⬣\n\n📌 *Reply with the number to select a font style for:*\n❝ " + q + " ❞";
-
-    const sentMsg = await conn.sendMessage(from, {
-      text: menuText
-    }, { quoted: m });
-
-    const messageID = sentMsg.key.id;
-
-    const messageHandler = async (msgData) => {
-      const receivedMsg = msgData.messages?.[0];
-      if (!receivedMsg || !receivedMsg.message) return;
-
-      const receivedText = receivedMsg.message.conversation ||
-        receivedMsg.message.extendedTextMessage?.text;
-
-      const senderID = receivedMsg.key.remoteJid;
-      const isReplyToBot = receivedMsg.message.extendedTextMessage?.contextInfo?.stanzaId === messageID;
-
-      if (isReplyToBot && senderID === from) {
-        const selectedNumber = parseInt(receivedText.trim());
-        if (isNaN(selectedNumber) || selectedNumber < 1 || selectedNumber > displayList.length) {
-          return conn.sendMessage(from, {
-            text: "❎ Invalid selection. Please reply with a number from 1 to " + displayList.length + ".",
-          }, { quoted: receivedMsg });
-        }
-
-        const chosen = displayList[selectedNumber - 1];
-        const finalText = `✨ *Your Text in ${chosen.name || 'Selected Style'}:*\n\n${chosen.result}\n\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
-
-        await conn.sendMessage(from, {
-          text: finalText
-        }, { quoted: receivedMsg });
+    let _0x365550 = "╭⭑━━➤ *ғᴀɴᴄʏ sᴛʏʟᴇ*\n " + (_0x3b568a ? "```🔢 ʀᴇᴘʟʏ ᴛʜᴇ ɴᴜᴍʙᴇʀ ʏᴏᴜ ᴡᴀɴᴛs ᴛᴏ sᴇʟᴇᴄᴛ``` \n\n" : "```\t\t" + "fancy XTREME(For all text)\n\t\t" + "fancy 25 XTREME(For specific text)```\n\n");
+    let _0x50c7d9 = parseInt(_0x3b568a);
+    if (isNaN(_0x50c7d9)) {
+      let _0x4ca942 = _0x3b568a ? _0x3b568a : "XTREME-XMD";
+      listall(_0x4ca942).forEach((_0x51f58f, _0x2be109) => {
+        _0x365550 += "\n" + (_0x2be109 += 1) + " " + _0x51f58f + "\n";
+      });
+      try {
+        return await _0x230c03.send(_0x365550, {
+          caption: _0x365550
+        }, "", msg);
+      } catch {
+        return await _0x230c03.reply(_0x365550);
       }
-    };
-
-    conn.ev.on("messages.upsert", messageHandler);
-  } catch (error) {
-    console.error("❌ Error in .fancy:", error);
-    reply("⚠️ An error occurred while processing.");
+    }
+    let _0x564034 = await fancytext("" + _0x3b568a.slice(2), _0x50c7d9);
+    return await _0x230c03.send(_0x564034, {}, "", _0x230c03);
+  } catch (_0x8dd389) {
+    return await _0x230c03.error(_0x8dd389 + "\n\ncmdName: fancy", _0x8dd389);
   }
 });
