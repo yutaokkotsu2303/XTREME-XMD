@@ -27,7 +27,7 @@ cmd({
     alias: ["setsudo"],
     desc: "Add a temporary owner",
     category: "owner",
-    react: "🙂‍↔️",
+    react: "🔝",
     filename: __filename
 }, async (conn, mek, m, { from, args, q, isCreator, reply, isOwner }) => {
     try {
@@ -68,7 +68,7 @@ cmd({
     alias: [],
     desc: "Remove a temporary owner",
     category: "owner",
-    react: "🫩",
+    react: "⤵️",
     filename: __filename
 }, async (conn, mek, m, { from, args, q, isCreator, reply, isOwner }) => {
     try {
