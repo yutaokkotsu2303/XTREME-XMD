@@ -3,7 +3,7 @@ const config = require('../config');
 
 cmd({
     pattern: "owner",
-    react: "🪀", 
+    react: "💫", 
     desc: "Get owner number",
     category: "main",
     filename: __filename
@@ -29,15 +29,14 @@ async (conn, mek, m, { from }) => {
 
         // Send the owner contact message with image and audio
         await conn.sendMessage(from, {
-            image: { url: 'https://files.catbox.moe/jfbed2.jpg' }, // Image URL from your request
-            caption: `╭⭑━━➤ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗
-┃◈╭─────────────·๏
+            image: { url: 'https://files.catbox.moe/nbtokl.jpg' }, // Image URL from your request
+            caption: `╭⭑━➤ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗
 ┃◈┃• *Here is the owner details*
 ┃◈┃• *Name* : *${config.OWNER_NAME}*
 ┃◈┃• *Number* ${ownerNumber}
 ┃◈┃• *Version*: 1.0.0 Beta
 ┃◈└───────────┈⊷
-╰──────────────┈⊷
+╰⭑━━━━━━━━━━━━━━⭑━➤
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`, // Display the owner's details
             contextInfo: {
                 mentionedJid: [`${ownerNumber.replace('+', '')}@s.whatsapp.net`], 
