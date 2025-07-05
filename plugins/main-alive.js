@@ -13,7 +13,7 @@ cmd({
 },
 async (conn, mek, m, { from, sender, reply }) => {
     try {
-        const status = `> *╭⭑━━━━━⪨ 𝗫𝗧𝗥𝗘𝗠𝗘 𝗔𝗟𝗜𝗩𝗘 ⪩*
+        const status = `> *╭⭑━━⪨ 𝗫𝗧𝗥𝗘𝗠𝗘 𝗔𝗟𝗜𝗩𝗘 ⪩*
 > *┃*✨ *ʙᴏᴛ ɪs ᴀᴄᴛɪᴠᴇ & ᴏɴʟɪɴᴇ!*
 > *┃*
 > *┃*🧠 *ᴏᴡɴᴇʀ:* ${config.OWNER_NAME}
