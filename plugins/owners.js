@@ -23,7 +23,7 @@ const ensureOwnerFile = () => {
 
 // افزودن شماره به owner.json
 cmd({
-    pattern: "addsudo",
+    pattern: "sudoadd",
     alias: ["setsudo"],
     desc: "Add a temporary owner",
     category: "owner",
@@ -31,7 +31,7 @@ cmd({
     filename: __filename
 }, async (conn, mek, m, { from, args, q, isCreator, reply, isOwner }) => {
     try {
-        if (!isCreator) return reply("* Command reserved for owner and only!*");
+        if (!isCreator) return reply("* ᴄᴏᴍᴍᴀɴᴅ ʀᴇsᴇʀᴠᴇᴅ ғᴏʀ ᴏᴡɴᴇʀ ᴀɴᴅ ᴏɴʟʏ!*");
 
         // پیدا کردن هدف (شماره یا کاربر)
         let target = m.mentionedJid?.[0] 
@@ -39,19 +39,19 @@ cmd({
             || (args[0]?.replace(/[^0-9]/g, '') + "@s.whatsapp.net");
 
         // اگر هیچ هدفی وارد نشده بود، پیام خطا بده
-        if (!target) return reply("*Please provide a number or tag/reply a user.*");
+        if (!target) return reply("*ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ɴᴜᴍʙᴇʀ ᴏʀ ᴛᴀɢ/ʀᴇᴘʟʏ ᴀ ᴜsᴇʀ*");
 
         let own = JSON.parse(fs.readFileSync("./lib/owner.json", "utf-8"));
 
         if (own.includes(target)) {
-            return reply("This user is already a temporary owner.");
+            return reply("*ᴛʜɪs ᴜsᴇʀ ɪs ᴀʟʀᴇᴀᴅʏ ᴀ ᴛᴇᴍᴘᴏʀᴀʀʏ ᴏᴡɴᴇʀ*");
         }
 
         own.push(target);
         const uniqueOwners = [...new Set(own)];
         fs.writeFileSync("./lib/owner.json", JSON.stringify(uniqueOwners, null, 2));
 
-        const dec = "✅ Successfully Added User As Temporary Owner";
+        const dec = "*✅ sᴜᴄᴄᴇssғᴜʟʟʏ ᴀᴅᴅᴇᴅ ᴜsᴇʀ ᴀs ᴛᴇᴍᴘᴏʀᴀʀʏ ᴏᴡɴᴇʀ*";
         await conn.sendMessage(from, {  // استفاده از await در اینجا درست است
             image: { url: "https://files.catbox.moe/06cgye.jpg" },
             caption: dec
@@ -64,7 +64,7 @@ cmd({
 
 // حذف شماره از owner.json
 cmd({
-    pattern: "delsudo",
+    pattern: "sudodel",
     alias: [],
     desc: "Remove a temporary owner",
     category: "owner",
@@ -72,27 +72,27 @@ cmd({
     filename: __filename
 }, async (conn, mek, m, { from, args, q, isCreator, reply, isOwner }) => {
     try {
-        if (!isCreator) return reply("*This Command Can Only Be Used By My Owner !*");
+        if (!isCreator) return reply("*ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ʙʏ ᴍʏ ᴏᴡɴᴇʀ !*");
 
         let target = m.mentionedJid?.[0] 
             || (m.quoted?.sender ?? null)
             || (args[0]?.replace(/[^0-9]/g, '') + "@s.whatsapp.net");
 
         // اگر هیچ هدفی وارد نشده بود، پیام خطا بده
-        if (!target) return reply("Please provide a number or tag/reply a user.");
+        if (!target) return reply("*ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ɴᴜᴍʙᴇʀ ᴏʀ ᴛᴀɢ/ʀᴇᴘʟʏ ᴀ ᴜsᴇʀ*");
 
         let own = JSON.parse(fs.readFileSync("./lib/owner.json", "utf-8"));
 
         if (!own.includes(target)) {
-            return reply("❌ User not found in owner list.");
+            return reply("*❌ ᴜsᴇʀ ɴᴏᴛ ғᴏᴜɴᴅ ɪɴ ᴏᴡɴᴇʀ ʟɪsᴛ*");
         }
 
         const updated = own.filter(x => x !== target);
         fs.writeFileSync("./lib/owner.json", JSON.stringify(updated, null, 2));
 
-        const dec = "✅ Successfully Removed User As Temporary Owner";
+        const dec = "*✅ sᴜᴄᴄᴇssғᴜʟʟʏ ʀᴇᴍᴏᴠᴇᴅ ᴜsᴇʀ ᴀs ᴛᴇᴍᴘᴏʀᴀʀʏ ᴏᴡɴᴇʀ*";
         await conn.sendMessage(from, {  // استفاده از await در اینجا درست است
-            image: { url: "https://files.catbox.moe/06cgye.jpg" },
+            image: { url: "https://files.catbox.moe/jfbed2.jpg" },
             caption: dec
         }, { quoted: mek });
     } catch (err) {
@@ -110,10 +110,10 @@ cmd({
     filename: __filename
 }, async (conn, mek, m, { from, args, isCreator, reply, isOwner }) => {
     try {
-    if (!isCreator) return reply("*This Command Can Only Be Used By My Owner !*");
+    if (!isCreator) return reply("*ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ʙʏ ᴍʏ ᴏᴡɴᴇʀ !*");
         // Check if the user is the owner
         if (!isOwner) {
-            return reply("❌ You are not the bot owner.");
+            return reply("*❌ ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴛʜᴇ ʙᴏᴛ ᴏᴡɴᴇʀ*");
         }
 
         // Read the owner list from the file and remove duplicates
@@ -122,7 +122,7 @@ cmd({
 
         // If no temporary owners exist
         if (own.length === 0) {
-            return reply("❌ No temporary owners found.");
+            return reply("*❌ ɴᴏ ᴛᴇᴍᴘᴏʀᴀʀʏ ᴏᴡɴᴇʀs ғᴏᴜɴᴅ*");
         }
 
         // Create the message with owner list
@@ -133,7 +133,7 @@ cmd({
 
         // Send the message with an image and formatted caption
         await conn.sendMessage(from, {
-            image: { url: "https://files.catbox.moe/06cgye.jpg" },
+            image: { url: "https://files.catbox.moe/jfbed2.jpg" },
             caption: listMessage
         }, { quoted: mek });
     } catch (err) {
@@ -156,7 +156,7 @@ async (conn, m, { reply, q, react }) => {
     
     if (m.sender !== botOwner) {
         await react("❌");
-        return reply("Only the bot owner can use this command.");
+        return reply("*ᴏɴʟʏ ᴛʜᴇ ʙᴏᴛ ᴏᴡɴᴇʀ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ*");
     }
 
     let jid;
@@ -174,11 +174,11 @@ async (conn, m, { reply, q, react }) => {
     try {
         await conn.updateBlockStatus(jid, "block");
         await react("✅");
-        reply(`Successfully blocked @${jid.split("@")[0]}`, { mentions: [jid] });
+        reply(`*sᴜᴄᴄᴇssғᴜʟʟʏ ʙʟᴏᴄᴋᴇᴅ @${jid.split("@")[0]}*`, { mentions: [jid] });
     } catch (error) {
         console.error("Block command error:", error);
         await react("❌");
-        reply("Failed to block the user.");
+        reply("*ғᴀɪʟᴇᴅ ᴛᴏ ʙʟᴏᴄᴋ ᴛʜᴇ ᴜsᴇʀ*");
     }
 });
 
@@ -982,7 +982,7 @@ Reply with:
 *3.* To Disable All Antidelete and reset
 
 ╭────────────────◆  
-│ *POWERED BY DAVIDX*  
+│ *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*  
 ╰─────────────────◆`;
 
     const sentMsg = await conn.sendMessage(from, {
@@ -1051,7 +1051,7 @@ cmd({
     filename: __filename
 },    
 async (conn, mek, m, { from, args, isCreator, reply }) => {
-    if (!isCreator) return reply("_*❗This Command Can Only Be Used By My Owner !*_");
+    if (!isCreator) return reply("_*❗ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ʙʏ ᴍʏ ᴏᴡɴᴇʀ !*_");
 
     const status = args[0]?.toLowerCase();
     // Check the argument for enabling or disabling the anticall feature
