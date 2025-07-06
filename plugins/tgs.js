@@ -16,7 +16,7 @@ cmd({
   
     // Check if a Telegram sticker link is provided
     if (!args[0]) {
-      reply('*Please provide a Telegram sticker pack link.*\n\n Example `.tgs` https://t.me/addstickers/telegram ');
+      reply('*ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴛᴇʟᴇɢʀᴀᴍ sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ ʟɪɴᴋ*\n\n ᴇxᴀᴍᴘʟᴇ `.tgs` https://t.me/addstickers/telegram ');
       return;
     }
 
@@ -24,7 +24,7 @@ cmd({
     const name = lien.split('/addstickers/')[1];
 
     if (!name) {
-      reply('Invalid Telegram sticker link.');
+      reply('*ɪɴᴠᴀʟɪᴅ ᴛᴇʟᴇɢʀᴀᴍ sᴛɪᴄᴋᴇʀ ʟɪɴᴋ'*);
       return;
     }
 
@@ -35,17 +35,17 @@ cmd({
 
     let type = stickers.data.result.is_animated ? 'animated sticker' : 'not animated sticker';
 
-    let message = `*TELEGRAM STICKER*\n\n` +
-                  `*Producer:* ${stickers.data.result.name}\n` +
-                  `*Type:* ${type}\n` +
-                  `*Length:* ${stickers.data.result.stickers.length}\n\n` +
-                  `> Please wait...`;
+    let message = `*ᴛᴇʟᴇɢʀᴀᴍ sᴛɪᴄᴋᴇʀ*\n\n` +
+                  `*ᴘʀᴏᴅᴜᴄᴇʀ:* ${stickers.data.result.name}\n` +
+                  `*ᴛʏᴘᴇ:* ${type}\n` +
+                  `*ʟᴇɴɢᴛʜ:* ${stickers.data.result.stickers.length}\n\n` +
+                  `> *ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...*`;
 
    // await reply(message);
 await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/06cgye.jpg` },
+                image: { url: `https://files.catbox.moe/lqvrr2.jpg` },
                 caption: message,
                 
             },
@@ -87,7 +87,7 @@ await conn.sendMessage(
       await new Promise(resolve => setTimeout(resolve, 1000));
     }
 
-    reply('Sticker pack download complete!');
+    reply('*sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇ!*');
 
   } catch (error) {
     console.error('Error processing Telegram sticker pack:', error);
