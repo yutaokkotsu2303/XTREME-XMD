@@ -12,9 +12,9 @@ cmd({
 }, async (conn, mek, m, { from, reply }) => {
     try {
         const menuCaption = `*┌──❖*
-*│ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗*
+*│ 「𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗」*
 *└─┬❖*
-*┌─┤ ʜɪ ᴅᴇᴀʀ 🌝*
+*┌─┤ 🌙 ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 💫
 *│   ╰────────────────╯*
 *│◓ ᴏᴡɴᴇʀ : ${config.OWNER_NAME}*
 *│◓ ʙᴀɪʟᴇʏs : Multi Device*
