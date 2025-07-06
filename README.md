@@ -1,5 +1,5 @@
 
-<h1 align="center">🚀xᴛʀᴇɴᴇ-xᴍᴅ</h1>
+<h1 align="center">🚀ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ</h1>
 
 <p align="center">
   <img src="https://files.catbox.moe/jfbed2.jpg" width="300"/><br>
