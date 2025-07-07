@@ -17,19 +17,20 @@ const config = require("../config");
 cmd(
   {
     pattern: 'vsticker',
-    alias: ['gsticker', 'g2s', 'gs', 'v2s', 'vs',],
+    alias: ['gsticker', 'sv', 'gs', 'v2s', 'vs',],
     desc: 'Convert GIF/Video to a sticker.',
     category: 'sticker',
     use: '<reply media or URL>',
+    react: "🔮",
     filename: __filename,
   },
   async (conn, mek, m, { quoted, args, reply }) => {
     try {
-      if (!mek.quoted) return reply('*Reply to a video or GIF to convert it to a sticker!*');
+      if (!mek.quoted) return reply('*ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴠɪᴅᴇᴏ ᴏʀ ɢɪғ ᴛᴏ ᴄᴏɴᴠᴇʀᴛ ɪᴛ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ!*');
 
       const mime = mek.quoted.mtype;
       if (!['videoMessage', 'imageMessage'].includes(mime)) {
-        return reply('*Please reply to a valid video or GIF.*');
+        return reply('*ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴠᴀʟɪᴅ ᴠɪᴅᴇᴏ ᴏʀ ɢɪғ*');
       }
 
       // Download the media file
@@ -61,15 +62,15 @@ cmd(
 
 
 cmd({
-    pattern: "attp",
+    pattern: "xtreme",
     desc: "Convert text to a GIF sticker.",
-    react: "✨",
+    react: "🤲🏻",
     category: "convert",
     use: ".attp HI",
     filename: __filename,
 }, async (conn, mek, m, { args, reply }) => {
     try {
-        if (!args[0]) return reply("*Please provide text!*");
+        if (!args[0]) return reply("*ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴛᴇxᴛ!*");
 
         const gifBuffer = await fetchGif(`https://api-fix.onrender.com/api/maker/attp?text=${encodeURIComponent(args[0])}`);
         const stickerBuffer = await gifToSticker(gifBuffer);
