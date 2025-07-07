@@ -127,7 +127,7 @@ const port = process.env.PORT || 9090;
 ├─ 🌟 *sᴛᴀʀ ᴛʜᴇ ʀᴇᴘᴏ:*
 │    https://github.com/PrinceXtremeX/XTREME-XMD
 ╰─🚀 *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
-    conn.sendMessage(conn.user.id, { image: { url: ` https://files.catbox.moe/jfbed2.jpg` }, caption: up })
+    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/ee7do3.jpg` }, caption: up })
   }
   })
   conn.ev.on('creds.update', saveCreds)
