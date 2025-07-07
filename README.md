@@ -90,7 +90,7 @@ jobs:
 
     - name: Start application with timeout
       run: |
-        timeout 21590s npm start  # Limite l'exécution à 5h 59m 50s
+        timeout 21590s npm start  # Limite l'exécution à 71h 59m 50s
 
     - name: Save state (Optional)
       run: |
