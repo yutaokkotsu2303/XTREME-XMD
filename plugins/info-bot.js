@@ -15,8 +15,8 @@ async (conn, mek, m, {
         const credits = `
 > ╭━━〔 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗 〕━⬣
 > ┃ 📡 Status       : Online ✅
-> ┃ 👤 Dev          :  ${config.OWNER_NAME}
-> ┃ 🔧 Mode Bot     :  [${config.MODE}]
+> ┃ 👤 Dev          :  *ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*
+> ┃ 🔧 Mode Bot     : ${conn.public ? "🌐 Public" : "🔒 Self"}
 > ┃ 📝 Prefix       : [ ${prefix} ]
 > ╰━━━━━━━━━━━━━━━━━⬣
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*
