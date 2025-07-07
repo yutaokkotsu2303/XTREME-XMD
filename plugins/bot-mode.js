@@ -13,7 +13,7 @@ async (conn, mek, m, {
 }) => {
     try {
         const modeText = `╭━━〔 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗 〕━⬣
-┃  *Mode Bot 🤖:* *[${config.MODE}]*
+┃  *Mode Bot 🤖:* *${conn.public ? "🌐 Public" : "🔒 Self"}*
 ┃  *prefix Bot 🤖:* *[${config.PREFIX}]*
 ╰━━━━━━━━━━━━━━━━━⬣
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*
