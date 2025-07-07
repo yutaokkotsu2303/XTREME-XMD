@@ -12,7 +12,7 @@ const { writeFileSync } = require('fs');
 const path = require('path');
 
 cmd({
-    pattern: "admin-events",
+    pattern: "antipromote",
     alias: ["adminevents"],
     desc: "Enable or disable admin event notifications",
     category: "settings",
@@ -46,10 +46,10 @@ async (conn, mek, m, { from, args, isCreator, reply }) => {
     const status = args[0]?.toLowerCase();
     if (status === "on") {
         config.WELCOME = "true";
-        return reply("✅ Welcome messages are now enabled.");
+        return reply("*_✅ ᴡᴇʟᴄᴏᴍᴇ ᴍᴇssᴀɢᴇs ᴀʀᴇ ɴᴏᴡ ᴇɴᴀʙʟᴇᴅ_*");
     } else if (status === "off") {
         config.WELCOME = "false";
-        return reply("❌ Welcome messages are now disabled.");
+        return reply("*_❌ ᴡᴇʟᴄᴏᴍᴇ ᴍᴇssᴀɢᴇs ᴀʀᴇ ɴᴏᴡ ᴅɪsᴀʙʟᴇᴅ_*");
     } else {
         return reply(`Example: .welcome on`);
     }
@@ -71,22 +71,22 @@ cmd({
     // Update the prefix in memory
     config.PREFIX = newPrefix;
 
-    return reply(`✅ Prefix successfully changed to *${newPrefix}*`);
+    return reply(`*_✅ ᴘʀᴇғɪx sᴜᴄᴄᴇssғᴜʟʟʏ ᴄʜᴀɴɢᴇᴅ ᴛᴏ_* *${newPrefix}*`);
 });
 
 cmd({
     pattern: "mode",
     alias: ["setmode"],
-    react: "🫟",
+    react: "🌛",
     desc: "Set bot mode to private or public.",
     category: "settings",
     filename: __filename,
 }, async (conn, mek, m, { from, args, isCreator, reply }) => {
-    if (!isCreator) return reply("*📛 Only the owner can use this command!*");
+    if (!isCreator) return reply("*_ᴏɴʟʏ ᴛʜᴇ ᴏᴡɴᴇʀ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ!_*");
 
     // Si aucun argument n'est fourni, afficher le mode actuel et l'usage
     if (!args[0]) {
-        return reply(`📌 Current mode: *${config.MODE}*\n\nUsage: .mode private OR .mode public`);
+        return reply(`*_📌 ᴄᴜʀʀᴇɴᴛ ᴍᴏᴅᴇ: *${config.MODE}*\n\nᴜsᴀɢᴇ: .ᴍᴏᴅᴇʀɴ ᴘʀɪᴠᴀᴛᴇ ᴏʀ .ᴍᴏᴅᴇ ᴘᴜʙʟɪᴄ`);
     }
 
     const modeArg = args[0].toLowerCase();
@@ -98,7 +98,7 @@ cmd({
         config.MODE = "public";
         return reply("🏷️ Bot mode is now set to *PUBLIC*.");
     } else {
-        return reply("❌ Invalid mode. Please use `.mode private` or `.mode public`.");
+        return reply("*_❌ ɪɴᴠᴀʟɪᴅ ᴍᴏᴅᴇ. ᴘʟᴇᴀsᴇ ᴜsᴇ_* `.ᴍᴏᴅᴇ ᴘʀɪᴠᴀᴛᴇ` ᴏʀ `.ᴍᴏᴅᴇ ᴘᴜʙʟɪᴄ`.");
     }
 });
 
@@ -125,7 +125,7 @@ async (conn, mek, m, { from, args, isCreator, reply }) => {
 
 cmd({
     pattern: "mention-reply",
-    alias: ["menetionreply", "mee"],
+    alias: ["menetionreply", "reply"],
     description: "Set bot status to always online or offline.",
     category: "settings",
     filename: __filename
@@ -152,7 +152,7 @@ async (conn, mek, m, { from, args, isCreator, reply }) => {
 //--------------------------------------------
 cmd({
     pattern: "always-online",
-    alias: ["alwaysonline"],
+    alias: ["online"],
     desc: "Enable or disable the always online mode",
     category: "settings",
     filename: __filename
@@ -204,7 +204,7 @@ async (conn, mek, m, { from, args, isCreator, reply }) => {
 //--------------------------------------------
 cmd({
     pattern: "auto-seen",
-    alias: ["autostatusview"],
+    alias: ["autostatus"],
     desc: "Enable or disable auto-viewing of statuses",
     category: "settings",
     filename: __filename
