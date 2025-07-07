@@ -16,13 +16,13 @@ cmd(
         desc: 'Create a sticker with a custom pack name.',
         category: 'sticker',
         use: '<reply media or URL>',
-        react: "👩🏻‍💻",
+        react: "🤹🏻‍♂️",
         filename: __filename,
     },
     async (conn, mek, m, { quoted, args, q, reply, from }) => {
-        if (!mek.quoted) return reply(`*REPLY TO ANY STICKER.*`);
-        if (!q) return reply(`𝗣𝗟𝗘𝗔𝗦𝗘 𝗣𝗥𝗢𝗩𝗜𝗗𝗘 𝗔 𝗣𝗔𝗖𝗞 𝗡𝗔𝗠𝗘
-> *EXEMPLE .TAKE RAHEEM*`);
+        if (!mek.quoted) return reply(`*_ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ sᴛɪᴄᴋᴇʀ_*`);
+        if (!q) return reply(`*_ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴘᴀᴄᴋ ɴᴀᴍᴇ_*
+> *ᴇxᴇᴍᴘʟᴇ .ᴛᴀᴋᴇ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`);
 
         let mime = mek.quoted.mtype;
         let pack = q;
@@ -40,7 +40,7 @@ cmd(
             const buffer = await sticker.toBuffer();
             return conn.sendMessage(mek.chat, { sticker: buffer }, { quoted: mek });
         } else {
-            return reply("*UHH, PLEASE REPLY TO AN IMAGE.*");
+            return reply("*_ᴜʜʜ, ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴ ɪᴍᴀɢᴇ._*");
         }
     }
 );
@@ -53,12 +53,12 @@ cmd(
         alias: ['s', 'stickergif'],
         desc: 'Create a sticker from an image, video, or URL.',
         category: 'sticker',
-        use: '<reply media or URL>',
-        react: "👨🏻‍💻",
+        use: '*_<ʀᴇᴘʟʏ ᴍᴇᴅɪᴀ ᴏʀ ᴜʀʟ>_*',
+        react: "🤹🏻‍♂️",
         filename: __filename,
     },
     async (conn, mek, m, { quoted, args, q, reply, from }) => {
-        if (!mek.quoted) return reply(`*REPLY TO ANY IMAGE OR VIDEO, SIR.*`);
+        if (!mek.quoted) return reply(`*_ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ, sɪʀ._*`);
         let mime = mek.quoted.mtype;
         let pack = Config.STICKER_NAME || "🌸𝐋𝐄 𝐌𝐄𝐂  𝐃𝐔𝐍𝐄 𝐒𝐄𝐔𝐋𝐄 𝐌𝐄𝐔𝐅☘️";
         
@@ -75,7 +75,7 @@ cmd(
             const buffer = await sticker.toBuffer();
             return conn.sendMessage(mek.chat, { sticker: buffer }, { quoted: mek });
         } else {
-            return reply("*UHH, PLEASE REPLY TO AN IMAGE.*");
+            return reply("*_ᴜʜʜ, ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴ ɪᴍᴀɢᴇ_*");
         }
     }
 );
