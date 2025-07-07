@@ -86,17 +86,17 @@ cmd({
 
     // Si aucun argument n'est fourni, afficher le mode actuel et l'usage
     if (!args[0]) {
-        return reply(`*_📌 ᴄᴜʀʀᴇɴᴛ ᴍᴏᴅᴇ: *${config.MODE}*\n\nᴜsᴀɢᴇ: .ᴍᴏᴅᴇʀɴ ᴘʀɪᴠᴀᴛᴇ ᴏʀ .ᴍᴏᴅᴇ ᴘᴜʙʟɪᴄ`);
+        return reply(`*_📌 ᴄᴜʀʀᴇɴᴛ ᴍᴏᴅᴇ:_* *${config.MODE}*\n\nᴜsᴀɢᴇ: .ᴍᴏᴅᴇʀɴ ᴘʀɪᴠᴀᴛᴇ ᴏʀ .ᴍᴏᴅᴇ ᴘᴜʙʟɪᴄ`);
     }
 
     const modeArg = args[0].toLowerCase();
 
     if (modeArg === "private") {
         config.MODE = "private";
-        return reply("╭━━〔 𝗫𝗧𝗥𝗘𝗠𝗘 𝗫𝗠𝗗 〕━⬣\n┃ 📡 *sᴛᴀᴛᴜs*       : ᴏɴʟɪɴᴇ ✅\n┃ 🔧 *ᴍᴏᴅᴇ ʙᴏᴛ*     : ᴘʀɪᴠᴀᴛᴇ\n┃ 📝 *ᴘʀᴇғɪx*       : [${prefix}]\n╰━━━━━━━━━━━━━━━━━⬣\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*");
+        return reply("╭━━〔 𝗫𝗧𝗥𝗘𝗠𝗘 𝗫𝗠𝗗 〕━⬣\n┃ 📡 *sᴛᴀᴛᴜs*       : ᴏɴʟɪɴᴇ ✅\n┃ 🔧 *ᴍᴏᴅᴇ ʙᴏᴛ*     : ᴘʀɪᴠᴀᴛᴇ\n╰━━━━━━━━━━━━━━━━━⬣\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*");
     } else if (modeArg === "public") {
         config.MODE = "public";
-        return reply("╭━━〔 𝗫𝗧𝗥𝗘𝗠𝗘 𝗫𝗠𝗗 〕━⬣\n┃ 📡 *sᴛᴀᴛᴜs*       : ᴏɴʟɪɴᴇ ✅\n┃ 🔧 *ᴍᴏᴅᴇ ʙᴏᴛ*     :ᴘᴜʙʟɪᴄ\n┃ 📝 *ᴘʀᴇғɪx*       : [${prefix}]\n╰━━━━━━━━━━━━━━━━━⬣\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*");
+        return reply("╭━━〔 𝗫𝗧𝗥𝗘𝗠𝗘 𝗫𝗠𝗗 〕━⬣\n┃ 📡 *sᴛᴀᴛᴜs*       : ᴏɴʟɪɴᴇ ✅\n┃ 🔧 *ᴍᴏᴅᴇ ʙᴏᴛ*     :ᴘᴜʙʟɪᴄ\n╰━━━━━━━━━━━━━━━━━⬣\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*");
     } else {
         return reply("*_❌ ɪɴᴠᴀʟɪᴅ ᴍᴏᴅᴇ. ᴘʟᴇᴀsᴇ ᴜsᴇ_* `.ᴍᴏᴅᴇ ᴘʀɪᴠᴀᴛᴇ` ᴏʀ `.ᴍᴏᴅᴇ ᴘᴜʙʟɪᴄ`.");
     }
