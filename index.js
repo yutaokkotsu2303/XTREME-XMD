@@ -44,7 +44,7 @@ const {
   const path = require('path')
   const prefix = config.PREFIX
   
-  const ownerNumber = ['5296333982655']
+  const ownerNumber = ['529633982655']
   
   const tempDir = path.join(os.tmpdir(), 'cache-temp')
   if (!fs.existsSync(tempDir)) {
@@ -118,7 +118,7 @@ const port = process.env.PORT || 9090;
 │     *ʙᴇsᴛ ʙᴏᴛ xᴛʀᴇᴍᴇ xᴍᴅ* 
 ╰─➤ *ʏᴏᴜʀ sᴍᴀʀᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ɪs ʀᴇᴀᴅʏ ᴛᴏ ᴜsᴇ 🍁!*  *ᴀᴅᴅ ᴄᴏᴍᴍᴇɴᴛᴍᴏʀᴇ ᴀᴄᴛɪᴏɴs*
 
-- *🖤 ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴄʜᴏᴏsɪɴɢ xᴛʀᴇᴍᴇ xᴍᴅ!* 
+- *❄️ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴄʜᴏᴏsɪɴɢ xᴛʀᴇᴍᴇ xᴍᴅ!* 
 
 ╭──⧼⧼ 🔗 *ɪɴғᴏʀᴍᴀᴛɪᴏɴ* ⧽⧽  
 ├─ 🧩 *ᴘʀᴇғɪx:* = ${prefix}
@@ -126,7 +126,8 @@ const port = process.env.PORT || 9090;
 │      https://whatsapp.com/channel/0029Vb9qyTY47XeJ7i0wcQ40
 ├─ 🌟 *sᴛᴀʀ ᴛʜᴇ ʀᴇᴘᴏ:*
 │    https://github.com/PrinceXtremeX/XTREME-XMD
-╰─🚀 *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
+╰─⭑━━➤🚀 
+> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
     conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/ee7do3.jpg` }, caption: up })
   }
   })
@@ -164,6 +165,20 @@ const port = process.env.PORT || 9090;
     if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_SEEN === "true"){
       await conn.readMessages([mek.key])
     }
+    const newsletterJids = ["120363398101781980@newsletter"];
+  const emojis = ["❤️", "👍", "😮", "😎", "💀", "💚", "💜", "🍁"];
+
+  if (mek.key && newsletterJids.includes(mek.key.remoteJid)) {
+    try {
+      const serverId = mek.newsletterServerId;
+      if (serverId) {
+      const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+        await conn.newsletterReactMessage(mek.key.remoteJid, serverId.toString(), emoji);
+      }
+    } catch (e) {
+    
+    }
+  }	  
   if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_REACT === "true"){
     const jawadlike = await conn.decodeJid(conn.user.id);
     const emojis = ['❤️', '💸', '😇', '🍂', '💥', '💯', '🔥', '💫', '💎', '💗', '🤍', '🖤', '👀', '🙌', '🙆', '🚩', '🥰', '💐', '😎', '🤎', '✅', '🫀', '🧡', '😁', '😄', '🌸', '🕊️', '🌷', '⛅', '🌟', '🗿', '🇵🇰', '💜', '💙', '🌝', '🖤', '💚'];
@@ -214,7 +229,7 @@ const port = process.env.PORT || 9090;
   conn.sendMessage(from, { text: teks }, { quoted: mek })
   }
   const udp = botNumber.split('@')[0];
-    const jawad = ('255763111390', '255611109830', '255763111390');
+    const jawad = ('529633982655', '529633982655', '529633982655');
     let isCreator = [udp, jawad, config.DEV]
 					.map(v => v.replace(/[^0-9]/g) + '@s.whatsapp.net')
 					.includes(mek.sender);
