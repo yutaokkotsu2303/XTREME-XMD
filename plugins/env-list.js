@@ -1,108 +1,112 @@
+const fs = require('fs');
+const path = require('path');
 const config = require('../config');
-const { cmd, commands } = require('../command');
-const { runtime } = require('../lib/functions');
-const axios = require('axios');
+const { cmd } = require('../command');
+
+function updateEnvVariable(key, value) {
+    const envPath = path.join(__dirname, "../.env");
+    let env = fs.existsSync(envPath) ? fs.readFileSync(envPath, 'utf8') : '';
+    const regex = new RegExp(`^${key}=.*`, "m");
+
+    if (regex.test(env)) {
+        env = env.replace(regex, `${key}=${value}`);
+    } else {
+        env += `\n${key}=${value}`;
+    }
+
+    fs.writeFileSync(envPath, env);
+
+    // ری‌لود کردن dotenv و config
+    require('dotenv').config({ path: envPath });
+
+    // پاک‌سازی کش config
+    delete require.cache[require.resolve('../config')];
+    Object.assign(config, require('../config'));  // ری‌لود
+}
 
 function isEnabled(value) {
-    // Function to check if a value represents a "true" boolean state
     return value && value.toString().toLowerCase() === "true";
 }
 
 cmd({
     pattern: "env",
-    alias: ["config", "setting"],
-    desc: "Show all bot configuration variables (Owner Only)",
+    alias: ["config", "settings"],
+    desc: "Bot config control panel via reply menu (ENV based)",
     category: "system",
     react: "⚙️",
     filename: __filename
 }, 
-async (conn, mek, m, { from, quoted, reply, isOwner }) => {
-    try {
-        // Owner check
-        if (!isOwner) {
-            return reply("🚫 *Owner Only Command!* You're not authorized to view bot configurations.");
-        }
+async (conn, mek, m, { from, reply, isCreator }) => {
+    if (!isCreator) return reply("*ᴄᴏᴍᴍᴀɴᴅ ʀᴇsᴇʀᴠᴇᴅ ғᴏʀ ᴏᴡɴᴇʀ ᴀɴᴅ ᴍʏ ᴄʀᴇᴀᴛᴏʀ ᴀʟᴏɴᴇ*");
 
-        const isEnabled = (value) => value && value.toString().toLowerCase() === "true";
+    const menu = `*╭⭑━━➤* *1. ᴀᴜᴛᴏ ғᴇᴀᴛᴜʀᴇs*
+*│➭* 1.1 - *ᴀᴜᴛᴏ ʀᴇᴘʟʏ* (${isEnabled(config.AUTO_REPLY) ? "✅" : "❌"})
+*│➭* 1.2 - *ᴀᴜᴛᴏ ʀᴇᴀᴄᴛ* (${isEnabled(config.AUTO_REACT) ? "✅" : "❌"})
+*│➭* 1.3 - *ᴀᴜᴛᴏ sᴛɪᴄᴋᴇʀ* (${isEnabled(config.AUTO_STICKER) ? "✅" : "❌"})
+*│➭* 1.4 - *ᴀᴜᴛᴏ ᴠᴏɪᴄᴇ* (${isEnabled(config.AUTO_VOICE) ? "✅" : "❌"})
+*╰─┬────❍*
+*╭─┴❍ 2. sᴇᴄᴜʀɪᴛʏ ❍*
+*│➭* 2.1 - *ᴀɴᴛɪ ʟɪɴᴋ* (${isEnabled(config.ANTI_LINK) ? "✅" : "❌"})
+*│➭* 2.2 - *ᴀɴᴛɪ ʙᴀᴅ* (${isEnabled(config.ANTI_BAD) ? "✅" : "❌"})
+*│➭* 2.3 - *ᴅᴇʟᴇᴛᴇ ʟɪɴᴋs* (${isEnabled(config.DELETE_LINKS) ? "✅" : "❌"})
+*╰─┬────❍*
+*╭─┴❍ 3. sᴛᴀᴛᴜs sʏsᴛᴇᴍ ❍*
+*│➭* 3.1 - *ᴀᴜᴛᴏ sᴛᴀᴛᴜs sᴇᴇɴ* (${isEnabled(config.AUTO_STATUS_SEEN) ? "✅" : "❌"})
+*│➭* 3.2 - *ᴀᴜᴛᴏ sᴛᴀᴛᴜs ʀᴇᴘʟʏ* (${isEnabled(config.AUTO_STATUS_REPLY) ? "✅" : "❌"})
+*│➭* 3.3 - *ᴀᴜᴛᴏ sᴛᴀᴛᴜs ʀᴇᴀᴄᴛ* (${isEnabled(config.AUTO_STATUS_REACT) ? "✅" : "❌"})
+*╰─┬────❍*
+*╭─┴❍ 4. ᴄᴏʀᴇ ❍*
+*│➭* 4.1 - *ᴀʟᴡᴀʏs ᴏɴʟɪɴᴇ* (${isEnabled(config.ALWAYS_ONLINE) ? "✅" : "❌"})
+*│➭* 4.2 - *ʀᴇᴀᴅ ᴍᴇssᴀɢᴇ* (${isEnabled(config.READ_MESSAGE) ? "✅" : "❌"})
+*│➭* 4.3 - *ʀᴇᴀᴅ ᴄᴍᴅ* (${isEnabled(config.READ_CMD) ? "✅" : "❌"})
+*│➭* 4.4 - *ᴘᴜʙʟɪᴄ ᴍᴏᴅᴇ* (${isEnabled(config.PUBLIC_MODE) ? "✅" : "❌"})
+*╰─┬────❍*
+*╭─┴❍ 5. ᴛʏᴘɪɴɢ/ʀᴇᴄᴏʀᴅɪɴɢ ❍*
+*│➭* 5.1 - *ᴀᴜᴛᴏ ᴛʏᴘɪɴɢ* (${isEnabled(config.AUTO_TYPING) ? "✅" : "❌"})
+*│➭* 5.2 - *ᴀᴜᴛᴏ ʀᴇᴄᴏʀᴅɪɴɢ* (${isEnabled(config.AUTO_RECORDING) ? "✅" : "❌"})
+*╰⭑━━━━━━━━━━⭑━➤*
 
-        let envSettings = `
-╭───『 *XTREME-XMD CONFIG* 』───❏
-│
-├─❏ *🤖 BOT INFO*
-│  ├─∘ *Name:* ${config.BOT_NAME}
-│  ├─∘ *Prefix:* ${config.PREFIX}
-│  ├─∘ *Owner:* ${config.OWNER_NAME}
-│  ├─∘ *Number:* ${config.OWNER_NUMBER}
-│  └─∘ *Mode:* ${config.MODE.toUpperCase()}
-│
-├─❏ *⚙️ CORE SETTINGS*
-│  ├─∘ *Public Mode:* ${isEnabled(config.PUBLIC_MODE) ? "✅" : "❌"}
-│  ├─∘ *Always Online:* ${isEnabled(config.ALWAYS_ONLINE) ? "✅" : "❌"}
-│  ├─∘ *Read Msgs:* ${isEnabled(config.READ_MESSAGE) ? "✅" : "❌"}
-│  └─∘ *Read Cmds:* ${isEnabled(config.READ_CMD) ? "✅" : "❌"}
-│
-├─❏ *🔌 AUTOMATION*
-│  ├─∘ *Auto Reply:* ${isEnabled(config.AUTO_REPLY) ? "✅" : "❌"}
-│  ├─∘ *Auto React:* ${isEnabled(config.AUTO_REACT) ? "✅" : "❌"}
-│  ├─∘ *Custom React:* ${isEnabled(config.CUSTOM_REACT) ? "✅" : "❌"}
-│  ├─∘ *React Emojis:* ${config.CUSTOM_REACT_EMOJIS}
-│  ├─∘ *Auto Sticker:* ${isEnabled(config.AUTO_STICKER) ? "✅" : "❌"}
-│  └─∘ *Auto Voice:* ${isEnabled(config.AUTO_VOICE) ? "✅" : "❌"}
-│
-├─❏ *📢 STATUS SETTINGS*
-│  ├─∘ *Status Seen:* ${isEnabled(config.AUTO_STATUS_SEEN) ? "✅" : "❌"}
-│  ├─∘ *Status Reply:* ${isEnabled(config.AUTO_STATUS_REPLY) ? "✅" : "❌"}
-│  ├─∘ *Status React:* ${isEnabled(config.AUTO_STATUS_REACT) ? "✅" : "❌"}
-│  └─∘ *Status Msg:* ${config.AUTO_STATUS_MSG}
-│
-├─❏ *🛡️ SECURITY*
-│  ├─∘ *Anti-Link:* ${isEnabled(config.ANTI_LINK) ? "✅" : "❌"}
-│  ├─∘ *Anti-Bad:* ${isEnabled(config.ANTI_BAD) ? "✅" : "❌"}
-│  ├─∘ *Anti-VV:* ${isEnabled(config.ANTI_VV) ? "✅" : "❌"}
-│  └─∘ *Del Links:* ${isEnabled(config.DELETE_LINKS) ? "✅" : "❌"}
-│
-├─❏ *🎨 MEDIA*
-│  ├─∘ *Alive Img:* ${config.ALIVE_IMG}
-│  ├─∘ *Menu Img:* ${config.MENU_IMAGE_URL}
-│  ├─∘ *Alive Msg:* ${config.LIVE_MSG}
-│  └─∘ *Sticker Pack:* ${config.STICKER_NAME}
-│
-├─❏ *⏳ MISC*
-│  ├─∘ *Auto Typing:* ${isEnabled(config.AUTO_TYPING) ? "✅" : "❌"}
-│  ├─∘ *Auto Record:* ${isEnabled(config.AUTO_RECORDING) ? "✅" : "❌"}
-│  ├─∘ *Anti-Del Path:* ${config.ANTI_DEL_PATH}
-│  └─∘ *Dev Number:* ${config.DEV}
-│
-╰───『 *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ* 』───❏
+_ʀᴇᴘʟʏ ᴡɪᴛʜ: 1.1, 2.2, ᴇᴛᴄ ᴛᴏ ᴛᴏɢɢʟᴇ ᴏɴ/ᴏғғ_
 `;
 
-        await conn.sendMessage(
-            from,
-            {
-                image: { url: `https://files.catbox.moe/iopat1.jpg` },
-                caption: envSettings,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true
-                }
-            },
-            { quoted: mek }
-        );
+    const sent = await conn.sendMessage(from, {
+    caption: menu,
+    image: { url: "https://files.catbox.moe/iopat1.jpg" }  // عکس تستی
+}, { quoted: mek });
 
-        // Optional audio message
-        await conn.sendMessage(
-            from,
-            {
-                audio: { url: 'https://files.catbox.moe/r20dpn.mp3' },
-                mimetype: 'audio/mp4',
-                ptt: true
-            },
-            { quoted: mek }
-        );
+    const messageID = sent.key.id;
 
-    } catch (error) {
-        console.error('Env command error:', error);
-        reply(`❌ Error displaying config: ${error.message}`);
-    }
+    const toggleSetting = (key) => {
+        const current = isEnabled(config[key]);
+        updateEnvVariable(key, current ? "false" : "true");
+        return `*✅ *${key}* ɪs ɴᴏᴡ sᴇᴛ ᴛᴏ: *${!current ? "ᴏɴ" : "ᴏғғ"}*`;
+    };
+
+    const handler = async (msgData) => {
+        const msg = msgData.messages[0];
+        const quotedId = msg?.message?.extendedTextMessage?.contextInfo?.stanzaId;
+
+        if (quotedId !== messageID) return;
+
+        const text = msg.message?.conversation || msg.message?.extendedTextMessage?.text || "";
+
+        const map = {
+            "1.1": "AUTO_REPLY", "1.2": "AUTO_REACT", "1.3": "AUTO_STICKER", "1.4": "AUTO_VOICE",
+            "2.1": "ANTI_LINK", "2.2": "ANTI_BAD", "2.3": "DELETE_LINKS",
+            "3.1": "AUTO_STATUS_SEEN", "3.2": "AUTO_STATUS_REPLY", "3.3": "AUTO_STATUS_REACT",
+            "4.1": "ALWAYS_ONLINE", "4.2": "READ_MESSAGE", "4.3": "READ_CMD", "4.4": "PUBLIC_MODE",
+            "5.1": "AUTO_TYPING", "5.2": "AUTO_RECORDING"
+        };
+
+        const key = map[text];
+
+        if (!key) return conn.sendMessage(from, { text: "*ʀᴇᴘʟʏ ᴡɪᴛʜ ᴀɴ ᴀᴠᴀɪʟᴀʙʟᴇ ɴᴜᴍʙᴇʀ*" }, { quoted: msg });
+
+        const res = toggleSetting(key);
+        await conn.sendMessage(from, { text: res }, { quoted: msg });
+        conn.ev.off("messages.upsert", handler);
+    };
+
+    conn.ev.on("messages.upsert", handler);
+    setTimeout(() => conn.ev.off("messages.upsert", handler), 60_000);
 });
