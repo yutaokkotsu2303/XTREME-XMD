@@ -77,7 +77,7 @@ cmd({
 cmd({
     pattern: "mode",
     alias: ["setmode"],
-    react: "🌛",
+    react: "💫",
     desc: "Set bot mode to private or public.",
     category: "settings",
     filename: __filename,
@@ -93,10 +93,10 @@ cmd({
 
     if (modeArg === "private") {
         config.MODE = "private";
-        return reply("🏷️ Bot mode is now set to *PRIVATE*.");
+        return reply("╭━━〔 𝗫𝗧𝗥𝗘𝗠𝗘 𝗫𝗠𝗗 〕━⬣\n┃ 📡 *sᴛᴀᴛᴜs*       : ᴏɴʟɪɴᴇ ✅\n┃ 🔧 *ᴍᴏᴅᴇ ʙᴏᴛ*     : ᴘʀɪᴠᴀᴛᴇ\n┃ 📝 *ᴘʀᴇғɪx*       : [${prefix}]\n╰━━━━━━━━━━━━━━━━━⬣\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*");
     } else if (modeArg === "public") {
         config.MODE = "public";
-        return reply("🏷️ Bot mode is now set to *PUBLIC*.");
+        return reply("╭━━〔 𝗫𝗧𝗥𝗘𝗠𝗘 𝗫𝗠𝗗 〕━⬣\n┃ 📡 *sᴛᴀᴛᴜs*       : ᴏɴʟɪɴᴇ ✅\n┃ 🔧 *ᴍᴏᴅᴇ ʙᴏᴛ*     :ᴘᴜʙʟɪᴄ\n┃ 📝 *ᴘʀᴇғɪx*       : [${prefix}]\n╰━━━━━━━━━━━━━━━━━⬣\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*");
     } else {
         return reply("*_❌ ɪɴᴠᴀʟɪᴅ ᴍᴏᴅᴇ. ᴘʟᴇᴀsᴇ ᴜsᴇ_* `.ᴍᴏᴅᴇ ᴘʀɪᴠᴀᴛᴇ` ᴏʀ `.ᴍᴏᴅᴇ ᴘᴜʙʟɪᴄ`.");
     }
