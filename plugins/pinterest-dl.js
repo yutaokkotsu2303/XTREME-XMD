@@ -6,12 +6,13 @@ cmd({
     alias: ["pinterestdl", "pin", "pins", "pindownload"],
     desc: "Download media from Pinterest",
     category: "download",
+    react: "📦",
     filename: __filename
 }, async (conn, mek, m, { args, quoted, from, reply }) => {
     try {
         // Make sure the user provided the Pinterest URL
         if (args.length < 1) {
-            return reply('❎ Please provide the Pinterest URL to download from.');
+            return reply('*❎ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴛʜᴇ ᴘɪɴᴛᴇʀᴇsᴛ ᴜʀʟ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ғʀᴏᴍ*');
         }
 
         // Extract Pinterest URL from the arguments
@@ -21,7 +22,7 @@ cmd({
         const response = await axios.get(`https://api.giftedtech.web.id/api/download/pinterestdl?apikey=gifted&url=${encodeURIComponent(pinterestUrl)}`);
 
         if (!response.data.success) {
-            return reply('❎ Failed to fetch data from Pinterest.');
+            return reply('*❎ ғᴀɪʟᴇᴅ ᴛᴏ ғᴇᴛᴄʜ ᴅᴀᴛᴀ ғʀᴏᴍ ᴘɪɴᴛᴇʀᴇsᴛ*');
         }
 
         const media = response.data.result.media;
@@ -32,16 +33,18 @@ cmd({
         const videoUrl = media.find(item => item.type.includes('720p'))?.download_url || media[0].download_url;
 
         // Prepare the new message with the updated caption
-        const desc = `╭━━━〔 *RAHEEM-XMD-3* 〕━━━┈⊷
-┃▸╭───────────
-┃▸┃๏ *PINS DOWNLOADER*
-┃▸└───────────···๏
+        const desc = `
+╭⭑━━━➤ 𝐏𝐈𝐍𝐒 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃
+┃▸┃๏ *ᴘɪɴs ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*
+┃▸┃๏ *ᴅᴇᴠ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*
+┃▸┃๏ *ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ ᴡᴀ ʙᴏᴛ*
+┃▸╰───────────⊷
 ╰────────────────┈⊷
-╭━━❐━⪼
-┇๏ *Title* - ${title}
-┇๏ *Media Type* - ${media[0].type}
-╰━━❑━⪼
-> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM CM😘*`;
+╭⭑━━━━━❂━⪼
+┃⥤๏ *ᴛɪᴛʟᴇ* - ${title}
+┃⥤๏ *ᴍᴇᴅɪᴀ ᴛʏᴘᴇ* - ${media[0].type}
+╰⭑━━━━━❂━⪼
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         // Send the media (video or image) to the user
         if (videoUrl) {
@@ -56,6 +59,6 @@ cmd({
     } catch (e) {
         console.error(e);
         await conn.sendMessage(from, { react: { text: '❌', key: mek.key } });
-        reply('❎ An error occurred while processing your request.');
+        reply('*❎ ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ ᴡʜɪʟᴇ ᴘʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ*');
     }
 });
