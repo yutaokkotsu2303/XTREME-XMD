@@ -23,7 +23,25 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, umarmd, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 
 try{
-let TerraMenu = `╭⭑━━➤ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗
+const botName = config.BOT_NAME || "XTREME-XMD"
+const barLength = 20
+let loadingMsg = await conn.sendMessage(from, { text: `${botName} Loading... [░░░░░░░░░░░░░░░░░░░░] 0%` }, { quoted: mek })
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+
+for (let i = 10; i <= 100; i += 10) {
+let filled = Math.round((i / 100) * barLength)
+let empty = barLength - filled
+let bar = '█'.repeat(filled) + '░'.repeat(empty)
+await delay(150)
+await conn.sendMessage(from, {
+    edit: loadingMsg.key,
+    text: `${botName} Loading... [${bar}] ${i}%`
+})
+}
+
+let TerraMenu = `
+
+╭⭑━━➤ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗
 ┃╭───────────────
 ‎┃│➺ *ᴜsᴇʀ :* ${pushname}
 ‎┃│➺ *ᴍᴏᴅᴇ :* ${config.MODE}
@@ -256,7 +274,9 @@ let TerraMenu = `╭⭑━━➤ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗
 > *┣➢* *.ᴀɴɪᴍᴇɢɪʀʟ5*
 > *┣➢* *.ᴘɪᴄᴋᴜᴘʟɪɴᴇ*
 > *╰⭑━━➤* *ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`
+> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*
+
+`
 
 await conn.sendMessage(from,{image:{url:config.ALIVE_IMG},caption:TerraMenu,
                           contextInfo: {
