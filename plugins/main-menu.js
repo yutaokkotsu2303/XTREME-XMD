@@ -25,7 +25,7 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, umarmd, args, q, isGroup, send
 try{
 const botName = config.BOT_NAME || "XTREME-XMD"
 const barLength = 20
-let loadingMsg = await conn.sendMessage(from, { text: `${botName} Loading... [░░░░░░░░░░░░░░░░░░░░] 0%` }, { quoted: mek })
+let loadingMsg = await conn.sendMessage(from, { text: `${botName} *...* [░░░░░░░░░░░░] 0%` }, { quoted: mek })
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 for (let i = 10; i <= 100; i += 10) {
