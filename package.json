@@ -1,7 +1,7 @@
 {
   "name": "XTREME-XMD",
   "version": "1.0.0",
-  "description": "A WhatsApp Bot Created By Dev Raheem-cm",
+  "description": "A WhatsApp Bot Created By Dev Princextremx",
   "main": "index.js",
   "scripts": {
     "start": "pm2 start index.js --deep-monitoring --attach --name XTREME-XMD",
