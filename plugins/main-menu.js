@@ -1,45 +1,17 @@
-const config = require('../config')
-const {cmd , commands} = require('../command')
-const os = require("os")
-const {runtime} = require('../lib/functions')
-const axios = require('axios')
+const config = require('../config');
+const { cmd } = require('../command');
+const fs = require('fs');
 
 cmd({
-
-    pattern: "menu",
-
-    react: "❄️",
-
-    desc: "Get bot command list.",
-
-    category: "main",
-
-    use: '.menu',
-
-    filename: __filename
-
-},
-
-async(conn, mek, m,{from, l, quoted, body, isCmd, umarmd, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-
-try{
-const botName = config.BOT_NAME || "XTREME-XMD"
-const barLength = 20
-let loadingMsg = await conn.sendMessage(from, { text: `${botName} *...* [░░░░░░░░░░░░░] 0%` }, { quoted: mek })
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-
-for (let i = 10; i <= 100; i += 10) {
-let filled = Math.round((i / 100) * barLength)
-let empty = barLength - filled
-let bar = '█'.repeat(filled) + '░'.repeat(empty)
-await delay(150)
-await conn.sendMessage(from, {
-    edit: loadingMsg.key,
-    text: `${botName} Loading... [${bar}] ${i}%`
-})
-}
-
-let TerraMenu = `╭⭑━━➤ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗
+  pattern: 'menu',
+  desc: 'Show interactive menu system',
+  category: 'menu',
+  react: '❄️',
+  filename: __filename
+}, async (conn, mek, m, { from }) => {
+  try {
+    const userName = m.pushName || 'User';
+    const menuCaption = `╭⭑━━➤ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗
 ┃╭───────────────
 ‎┃│➺ *ᴜsᴇʀ :* ${pushname}
 ‎┃│➺ *ᴍᴏᴅᴇ :* ${config.MODE}
@@ -272,9 +244,7 @@ let TerraMenu = `╭⭑━━➤ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗
 > *┣➢* *.ᴀɴɪᴍᴇɢɪʀʟ5*
 > *┣➢* *.ᴘɪᴄᴋᴜᴘʟɪɴᴇ*
 > *╰⭑━━➤* *ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*
-
-`
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`
 
 await conn.sendMessage(from,{image:{url:config.ALIVE_IMG},caption:TerraMenu,
                           contextInfo: {
