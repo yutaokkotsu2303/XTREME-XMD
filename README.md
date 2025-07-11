@@ -10,7 +10,7 @@
   <a href="https://github.com/PrinceXtremeX/XTREME-XMD"><img src="https://img.shields.io/github/stars/PrinceXtremeX/XTREME-XMD?style=flat-square&color=yellow"></a>
   <a href="https://github.com/PrinceXtremeX/XTREME-XMD/fork"><img src="https://img.shields.io/github/forks/PrinceXtremeX/XTREME-XMD?style=flat-square&color=lightblue"></a>
   <a href="https://whatsapp.com/channel/0029Vb9qyTY47XeJ7i0wcQ40"><img src="https://img.shields.io/badge/WhatsApp-Channel-25D366?style=flat-square&logo=whatsapp"></a>
-  <a href="https://github.com/PrinceXtremeX"><img src="https://img.shields.io/badge/Dev-Crazynotdev-blueviolet?style=flat-square"></a>
+  <a href="https://github.com/PrinceXtremeX"><img src="https://img.shields.io/badge/Dev-Prince Xtreme-blueviolet?style=flat-square"></a>
 </p>
 
 **sᴇssɪᴏɴ ɪᴅ💫**
