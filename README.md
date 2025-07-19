@@ -52,7 +52,7 @@
 **ɢɪᴛʜᴜʙ ᴅᴇᴘʟᴏʏᴍᴇɴᴛ** 
 
 ```
-name: Node.js CI
+name: Node.js Auto-Restart CI
 
 on:
   push:
@@ -62,11 +62,10 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 */6 * * *'  
+    - cron: '0 */6 * * *'  # Every 6 hours
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -90,11 +89,14 @@ jobs:
 
     - name: Start application with timeout
       run: |
-        timeout 10800s npm start  # Limite l'exécution à 72h 00m 00s
+        timeout 21600s npm start  # 6 hours max
 
-    - name: Save state (Optional)
+    - name: Auto-commit to trigger restart
       run: |
-        ./save_state.sh
+        git config --global user.email "autorestart@bot.com"
+        git config --global user.name "Auto Restart Bot"
+        git commit --allow-empty -m "⏱️ Automatic bot restart"
+        git push
 ```
 
 ---
