@@ -1,8 +1,8 @@
 {
-  "name": "RAHEEM-XMD-3",
-  "description": "Javascript WhatsApp bot made ʙʏ RAHEEM-CM",
-  "logo": "https://files.catbox.moe/a97zm1.jpg",
-  "keywords": ["RAHEEM-XMD-3"],
+  "name": "FLEX-AI",
+  "description": "An Advanced Whatsapp bot 🚀 built for fast automation, media tool, and smooth group management developed by PRINCE",
+  "logo": "https://files.catbox.moe/mry39g.jpg",
+  "keywords": ["FLEX-AI"],
   "success_url": "/",
 
     "stack": "container",
@@ -16,7 +16,7 @@
     "STICKER_NAME": {
       "description": "type your sticker pack name.",
       "required": false,
-      "value": "RAHEEM-XMD-3"
+      "value": "FLEX-AI"
     }, 
       
     "PREFIX": {
@@ -31,20 +31,19 @@
       "value": "public"
       
     },
-    
+
+     "ANTI_DELETE": {
+      "description": "set true for show deleted messages.",
+      "required": false,
+      "value": "true"  
+    },
     
     "ALWAYS_ONLINE": {
       "description": "Make it true if want always online.",
       "required": false,
       "value": "false"  
     },    
-  
-    "AUTO_VOICE": {
-      "description": "Make it true if want automatic voice reply .",
-      "required": false,
-      "value": "false"
-    }, 
-
+   
     "AUTO_REPLY": {
       "description": "Make it true if you want automatic reply.",
       "required": false,
@@ -79,27 +78,27 @@
     "AUTO_STATUS_MSG": {
       "description": "Type custom message on status reply",
       "required": true,
-      "value": "*SEEN YOUR STATUS BY RAHEEM-XMD-3 🐺*"
+      "value": "*SEEN YOUR STATUS BY flex ai*"
    
      }, 
     
     "OWNER_NAME": {
       "description": "Type Bot Owner Name.",
       "required": false,
-      "value": "RAHEEM-CM"
+      "value": "𝙳𝙰𝚅𝙸𝙽𝙲𝚂 𝚃𝙴𝙲𝙷"
 }, 
 
     "OWNER_NUMBER": {
       "description": "put the owner number for bot.",
       "required": false,
-      "value": "255XXXXXX"
+      "value": "255656582542"
 
     }, 
 
     "BOT_NAME": {
       "description": "Type here the bot name.",
       "required": false,
-      "value": "RAHEEM-XMD-3"
+      "value": "【𝐅𝐋𝐄𝐗 𝐀𝐈】"
 
       }, 
 
@@ -132,13 +131,13 @@
     "MENU_IMAGE_URL": {
       "description": "add url for mention reply and menu if want.",
       "required": false,
-      "value": "https://files.catbox.moe/a97zm1.jpg"
+      "value": "https://files.catbox.moe/dff3u2.jpg"
     },
     
      "DESCRIPTION": {
       "description": "add caption for menu and other",
       "required": false,
-      "value": "> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM-XMD-3*"
+      "value": "*© 𝐄𝐍𝐆𝐈𝐍𝐄 𝐂𝐎𝐑𝐄 𝐁𝐘 𝐏𝐑𝐈𝐍𝐂𝐄 𝐒𝐈𝐃*"
     },
 
       "DELETE_LINKS": {
@@ -179,9 +178,9 @@
     }, 
     
     "ANTI_DEL_PATH": {
-      "description": "change it to -same- if you want to resend deleted message in same chat",
+      "description": "change it to -same- if you want to resend deleted message in same chat othwise inbox",
       "required": false,
-      "value": "log"
+      "value": "inbox"
     }, 
 
     "ADMIN_EVENTS": {
@@ -211,4 +210,4 @@
      ],
   "stack": "heroku-24"
 }
-
+  
