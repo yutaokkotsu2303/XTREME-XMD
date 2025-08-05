@@ -1,6 +1,6 @@
-name: xtreme-xmd
+name: XTREME-XMD
 services:
-  - name: mini-xtreme-service
+  - name: XTREME-XMD-service
     type: web
     ports:
       - 5000
