@@ -1,6 +1,6 @@
-name: XTREME-XMD
+name: haiko-xmd-3
 services:
-  - name: XTREME-XMD-service
+  - name: megalodon-md-service
     type: web
     ports:
       - 5000
