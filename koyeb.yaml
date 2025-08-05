@@ -1,0 +1,17 @@
+name: xtreme-xmd
+services:
+  - name: mini-xtreme-service
+    type: web
+    ports:
+      - 5000
+    routes:
+      - path: "/"
+    build:
+      type: docker
+      dockerfile: ./Dockerfile
+    regions:
+      - fra
+      - sin
+
+
+      
