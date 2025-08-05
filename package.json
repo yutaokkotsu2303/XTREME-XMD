@@ -1,12 +1,12 @@
 {
-  "name": "xtreme-xmd",
+  "name": "XTREME-XMD",
   "version": "1.0.0",
   "description": "A WhatsApp Bot Created By Dev prince xtreme",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name xtreme-xmd",
-    "stop": "pm2 stop xtreme-xmd",
-    "restart": "pm2 restart xtreme-xmd"
+    "start": "pm2 start index.js --deep-monitoring --attach --name XTREME-XMD",
+    "stop": "pm2 stop XTREME-XMD",
+    "restart": "pm2 restart XTREME-XMD"
   },
   "dependencies": {
    "@whiskeysockets/baileys": "npm:baileys-pro@0.0.5",
