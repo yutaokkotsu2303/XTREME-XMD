@@ -2,7 +2,7 @@
 <h1 align="center">XTREME XMD</h1>
 
 <p align="center">
-  <img src="https://files.catbox.moe/jfbed2.jpg" width="300"/><br>
+  <img src="https://files.catbox.moe/d9ghms.jpg" width="300"/><br>
   <b>Fast, Powerful, and Stylish WhatsApp Bot built for fun and performance.</b>
 </p>
 
