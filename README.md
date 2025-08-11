@@ -15,7 +15,7 @@
 
 **sᴇssɪᴏɴ ɪᴅ💫**
 
-[![XTREME XMD SESSION](https://img.shields.io/badge/XTREME%20-XMD%20SESSION-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://haiko-mdx-v2-session.onrender.com/pair)
+[![XTREME XMD SESSION](https://img.shields.io/badge/XTREME%20-XMD%20SESSION-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://haiko-mdx-v2-session.onrender.com)
 ---
 
 🧠 **ғᴇᴀᴛᴜʀᴇs**
