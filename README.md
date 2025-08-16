@@ -52,7 +52,7 @@
 **ɢɪᴛʜᴜʙ ᴅᴇᴘʟᴏʏᴍᴇɴᴛ** 
 
 ```
-name: Node.js Auto-Restart CI
+name: Node.js 24/7 Bot with Failover
 
 on:
   push:
@@ -62,7 +62,8 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours
+    - cron: '0 */7 * * *'  # Restart every 7 hours
+  workflow_dispatch:        # Manual start if needed
 
 jobs:
   build:
@@ -87,17 +88,16 @@ jobs:
     - name: Install FFmpeg
       run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-    - name: Start application with timeout
+    - name: Start bot with auto-restart (7h max)
       run: |
-        echo "🚀 Starting bot (will run max 6 hours)..."
-        timeout 21600s npm start || echo "⏹ Bot stopped or timed out"
-
-    - name: Auto-commit to trigger restart
-      run: |
-        git config --global user.email "autorestart@bot.com"
-        git config --global user.name "Auto Restart Bot"
-        git commit --allow-empty -m "⏱️ Automatic bot restart"
-        git push
+        echo "🚀 Starting bot with failover (7h max)..."
+        end=$((SECONDS+25200))   # 25200s = 7h
+        while [ $SECONDS -lt $end ]; do
+          echo "▶️ Launching bot..."
+          npm start || echo "⚠️ Bot crashed, restarting..."
+          sleep 5
+        done
+        echo "⏹ Bot reached 7h limit, waiting for next cron restart."
 ```
 
 ---
